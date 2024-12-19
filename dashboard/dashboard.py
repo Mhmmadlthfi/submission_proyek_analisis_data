@@ -38,15 +38,15 @@ with tab1:
         "- Penyewa **kasual** lebih banyak menyewa sepeda pada hari libur."
     )
 
-# Tab 2: Musim dan Penyewa
+# Musim dan Penyewa
 with tab2:
     st.subheader("Musim yang Paling Diminati oleh Penyewa")
 
-    # Data Preparation
+    # Persiapan data / Data Preparation
     season_group = day_df.groupby("season")[["casual", "registered"]].mean()
     season_group.index = ["Spring", "Summer", "Fall", "Winter"]
 
-    # Visualization
+    # Visualisasi
     fig, ax = plt.subplots(figsize=(8, 5))
     season_group.plot(kind="bar", ax=ax)
     ax.set_title("Rata-rata Penyewaan Sepeda per Musim")
@@ -58,14 +58,14 @@ with tab2:
         "- Musim **Fall** memiliki penyewaan tertinggi untuk penyewa **kasual** dan **terdaftar**."
     )
 
-# Tab 3: Waktu Favorit Penyewa
+# Waktu Favorit Penyewa
 with tab3:
     st.subheader("Waktu Favorit Penyewa Sepeda dalam Satu Hari")
 
-    # Data Preparation
+    # Persiapan data / Data Preparation
     hourly_group = hour_df.groupby("hr")[["casual", "registered"]].mean()
 
-    # Visualization
+    # Visualisasi
     fig, ax = plt.subplots(figsize=(8, 5))
     hourly_group.plot(kind="line", ax=ax, marker="o")
     ax.set_title("Rata-rata Penyewaan Sepeda per Jam")
