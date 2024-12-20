@@ -15,8 +15,8 @@ tab1, tab2, tab3 = st.tabs(
     ["Tren Hari Libur vs Hari Kerja", "Musim dan Penyewa", "Waktu Favorit Penyewa"]
 )
 
-day_df = pd.read_csv("../data/day.csv")
-hour_df = pd.read_csv("../data/hour.csv")
+day_df = pd.read_csv("data/day.csv")
+hour_df = pd.read_csv("data/hour.csv")
 
 # Sidebar
 st.sidebar.header("Filter")
